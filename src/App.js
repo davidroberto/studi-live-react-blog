@@ -1,12 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Meal from "./Meal.js";
 
 function App() {
+  console.log("App render");
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>Bonsoir aux étudiants Studi</p>
+        <p>Bonsoir aux étudiants Studi en ce mardi</p>
       </header>
+      <Meal />
     </div>
   );
 }
