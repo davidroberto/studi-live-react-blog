@@ -1,13 +1,7 @@
 import { useEffect } from "react";
+import axios from "axios";
 
 const Meal = () => {
-  console.log("Meal render");
-  // Je veux executer du code juste après le premier rendu du composant
-  // Le code que je veux exécuter est un appel vers une API
-  // pour récupérer des recettes de cuisine
-  // et les afficher dans mon composant Meal, pour qu'elles soient
-  // affichées dans ma page
-
   let meal = null;
 
   useEffect(() => {
@@ -15,11 +9,14 @@ const Meal = () => {
       const url = "https://www.themealdb.com/api/json/v1/1/random.php";
 
       const response = await fetch(url);
-
       const mealsFromApi = await response.json();
-
       meal = mealsFromApi.meals[0];
     })();
+
+    // axios
+    //   .get("https://www.themealdb.com/api/json/v1/1/random.php")
+    //   .then((response) => {
+    //   });
   });
 
   return (
